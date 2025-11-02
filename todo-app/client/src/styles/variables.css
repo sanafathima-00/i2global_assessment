@@ -1,0 +1,139 @@
+:root {
+  /* ===============================
+     🌙 DARK MODE COLORS
+  =============================== */
+  --dark-page-background: #2c2f33;
+  --dark-header-background: #2c2f33;
+  --dark-background: #3c4043;
+  --dark-text: #e0e0e0;
+  --dark-search-background: #2f3134;
+  --dark-search-placeholder: #a0a0a0;
+  --dark-border: #505050;
+  --dark-checkbox-outline: #909090;
+  --dark-due-date-background: rgb(110, 156, 255, 0.4);
+  --dark-due-date-text: rgb(110, 156, 255);
+  --priority-high-bg: rgba(255, 0, 0, 0.4);
+  --dark-priority-high-text: #ff1900;
+  --priority-medium-bg: rgba(241, 196, 15, 0.4);
+  --dark-priority-medium-text: #ffe100;
+  --priority-low-bg: rgba(0, 255, 0, 0.4);
+  --dark-priority-low-text: #00ff6a;
+
+  /* ===============================
+     ☀️ LIGHT MODE COLORS
+  =============================== */
+  --light-page-background: #f0f2f5;
+  --light-header-background: #ffffff;
+  --light-background: #ffffff;
+  --light-text: #333333;
+  --light-search-background: #f5f5f5;
+  --light-search-placeholder: #a0a0a0;
+  --light-border: #d0d0d0;
+  --light-checkbox-outline: #aaaaaa;
+  --light-due-date-background: rgba(74, 136, 255, 0.08);
+  --light-due-date-text: #555555;
+  --light-badge-background: rgba(74, 136, 255, 0.08);
+  --light-badge-text: #555555;
+  --light-priority-high-text: #ff0000;
+  --light-priority-medium-text: #e0a800;
+  --light-priority-low-text: #00e81f;
+
+  /* ===============================
+     🎨 COMMON COLORS
+  =============================== */
+  --primary-blue: rgb(110, 156, 255, 0.3);
+  --primary-blue-light: rgb(110, 156, 255);
+  --priority-high-bg: rgba(255, 0, 0, 0.4);
+  --priority-medium-bg: rgba(241, 196, 15, 0.4);
+  --priority-low-bg: rgba(0, 255, 0, 0.4);
+  --white: #ffffff;
+  --black: #000000;
+  --delete-hover: #ff6666;
+  --border-light: #D0D0D0;
+  --border-dark: #505050;
+  --placeholder-color: #A0A0A0;
+  --logo-red: #ff4b4b;
+  --logo-green: #7dda89;
+  --logo-yellow: #ffd65a;
+  --logo-blue: #4a88ff;
+  --button-hover: #5a7fd0;
+
+  /* ===============================
+     🔤 TYPOGRAPHY
+  =============================== */
+  --font-family: "Inter", "Segoe UI", sans-serif;
+  --font-size-header: 30px;
+  --font-size-task: 16px;
+  --font-size-small: 13px;
+
+  /* ===============================
+     📏 SPACING SYSTEM
+  =============================== */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --spacing-xlarge: 32px;
+
+  /* ===============================
+     🧱 BORDERS
+  =============================== */
+  --border-radius-small: 6px;
+  --border-radius-medium: 10px;
+  --border-radius-large: 15px;
+
+  /* ===============================
+     🔘 BUTTONS
+  =============================== */
+  --primary-button: #6e9cff;
+  --button-text: #ffffff;
+
+  /* ===============================
+     ⚙️ TRANSITIONS
+  =============================== */
+  --transition-speed: 0.25s;
+
+  /* ===============================
+     🌑 SHADOWS
+  =============================== */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+  --shadow-navbar: rgba(0, 0, 0, 0.2);
+  --shadow-button: rgba(0, 0, 0, 0.15);
+
+  /* ===============================
+     🪟 MODAL THEME COLORS
+  =============================== */
+  /* Light Mode Modal */
+  --modal-light-background: #FFFFFF;
+  --modal-light-text: #333333;
+  --modal-light-subtext: #A0A0A0;
+  --modal-light-input-bg: #F5F5F5;
+  --modal-light-border: #D0D0D0;
+  --modal-light-primary-btn: #4A88FF;
+  --modal-light-secondary-btn: #E0E0E0;
+  --modal-light-secondary-text: #555555;
+  --modal-light-icons: #A0A0A0;
+  --modal-light-primary-hover: #3A77E8; /* Darker blue */
+  --modal-light-secondary-hover: #CCCCCC; /* Darker grey */
+  --modal-light-input-focus: rgba(74, 136, 255, 0.3); /* Subtle blue glow */
+
+  /* Dark Mode Modal */
+  --modal-dark-background: #1E1E1E;
+  --modal-dark-text: #EDEDED;
+  --modal-dark-subtext: #9A9A9A;
+  --modal-dark-input-bg: #2A2A2A;
+  --modal-dark-border: #3A3A3A;
+  --modal-dark-primary-btn: #5A8CFF;
+  --modal-dark-secondary-btn: #333333;
+  --modal-dark-secondary-text: #CCCCCC;
+  --modal-dark-icons: #B0B0B0;
+  --modal-dark-primary-hover: #6A9CFF; /* Slightly brighter blue */
+  --modal-dark-secondary-hover: #404040; /* Slightly lighter grey */
+  --modal-dark-input-focus: rgba(90, 140, 255, 0.3); /* Subtle blue focus glow */
+
+  /* ===============================
+     📐 DIMENSIONS
+  =============================== */
+  --header-height: 50px;
+  --container-max-width: 900px;
+}

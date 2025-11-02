@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+  padding-top: 35px;
+}
+
+.header-title {
+  font-size: var(--font-size-header);
+  font-weight: 600;
+  font-family: var(--font-family);
+}
+
+.light-mode .header-title {
+  color: var(--light-text);
+}
+
+.dark-mode .header-title {
+  color: var(--dark-text);
+}

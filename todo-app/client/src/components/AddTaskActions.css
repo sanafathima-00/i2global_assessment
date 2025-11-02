@@ -1,0 +1,64 @@
+/* Action Buttons */
+.add-task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.add-task-btn {
+  padding: 11px 23px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.add-task-cancel-btn {
+  background: var(--modal-light-secondary-btn);
+  color: var(--modal-light-secondary-text);
+}
+
+.add-task-cancel-btn:hover {
+  background: var(--modal-light-secondary-hover);
+}
+
+.add-task-save-btn {
+  background: var(--modal-light-primary-btn);
+  color: #ffffff;
+}
+
+.add-task-save-btn:hover {
+  background: var(--modal-light-primary-hover);
+}
+
+/* Dark Mode Button Overrides */
+.dark-mode .add-task-cancel-btn {
+  background: var(--modal-dark-secondary-btn);
+  color: var(--modal-dark-secondary-text);
+}
+
+.dark-mode .add-task-cancel-btn:hover {
+  background: var(--modal-dark-secondary-hover);
+}
+
+.dark-mode .add-task-save-btn {
+  background: var(--modal-dark-primary-btn);
+}
+
+.dark-mode .add-task-save-btn:hover {
+  background: var(--modal-dark-primary-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .add-task-actions {
+    flex-direction: column;
+  }
+
+  .add-task-btn {
+    width: 100%;
+  }
+}

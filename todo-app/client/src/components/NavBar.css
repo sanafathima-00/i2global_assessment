@@ -1,0 +1,78 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: var(--font-family);
+  font-weight: 700;
+  transition: background var(--transition-speed), color var(--transition-speed);
+  box-shadow: 0px 2px 5px var(--shadow-navbar);
+}
+
+.light-mode .navbar {
+  background-color: var(--light-header-background);
+  color: var(--light-text);
+}
+
+.dark-mode .navbar {
+  background-color: var(--dark-header-background);
+  color: var(--dark-text);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-text {
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  margin-left: 30px;
+}
+
+.logo-dots {
+  display: grid;
+  grid-template-columns: repeat(2, 9px);
+  grid-template-rows: repeat(2, 9px);
+  gap: 4px;
+}
+
+.logo-dots .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.logo-dots .red {
+  background-color: var(--logo-red);
+}
+.logo-dots .green {
+  background-color: var(--logo-green);
+}
+.logo-dots .yellow {
+  background-color: var(--logo-yellow);
+}
+.logo-dots .blue {
+  background-color: var(--logo-blue);
+}
+
+.theme-toggle {
+  font-size: 26px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+}

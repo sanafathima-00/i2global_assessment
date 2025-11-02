@@ -1,0 +1,67 @@
+@import "./../styles/variables.css";
+
+/* ===============================
+   🗓️ Work To-Do Page Styles
+   =============================== */
+
+.work-todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - var(--header-height));
+  padding: 100px 20px 60px;
+  box-sizing: border-box;
+}
+
+.light-mode .work-todo-container {
+  background-color: var(--light-page-background);
+}
+
+.dark-mode .work-todo-container {
+  background-color: var(--dark-page-background);
+}
+
+/* ---------- Title Above Card ---------- */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+.light-mode .page-title {
+  color: var(--light-text);
+}
+
+.dark-mode .page-title {
+  color: var(--dark-text);
+}
+
+.page-title span {
+  font-weight: 400;
+}
+
+/* ---------- Work To-Do Card ---------- */
+.work-todo-card {
+  width: 90%;
+  max-width: var(--container-max-width);
+  border-radius: var(--border-radius-medium);
+  padding: 30px 50px;
+  box-sizing: border-box;
+}
+
+.light-mode .work-todo-card {
+  background-color: var(--light-background);
+  box-shadow: 0px 8px 20px var(--shadow-light);
+}
+
+.dark-mode .work-todo-card {
+  background-color: var(--dark-background);
+  box-shadow: 0px 8px 20px var(--shadow-dark);
+}
+
+.work-todo-card .search-bar {
+  margin-top: 0;
+  margin-bottom: 35px;
+}

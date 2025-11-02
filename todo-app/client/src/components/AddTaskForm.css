@@ -1,0 +1,35 @@
+/* Form Sections */
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-task-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Attributes Grid (2x2) */
+.add-task-attributes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Title Input */
+
+/* Textarea */
+.add-task-textarea {
+  height: 90px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .add-task-attributes-grid {
+    grid-template-columns: 1fr;
+  }
+}

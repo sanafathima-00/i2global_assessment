@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  transition: background-color var(--transition-speed);
+}
+
+.light-mode body {
+  background-color: var(--light-page-background);
+}
+
+.dark-mode body {
+  background-color: var(--dark-page-background);
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px 60px;
+}
+
+.todo-card {
+  width: 90%;
+  max-width: var(--container-max-width);
+  padding: var(--spacing-large);
+  border-radius: var(--border-radius-medium);
+}
+
+.light-mode .todo-card {
+  background-color: var(--light-background);
+  box-shadow: 0px 8px 20px var(--shadow-light);
+}
+
+.dark-mode .todo-card {
+  background-color: var(--dark-background);
+  box-shadow: 0px 8px 20px var(--shadow-dark);
+}

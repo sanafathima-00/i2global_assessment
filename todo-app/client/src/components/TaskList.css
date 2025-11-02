@@ -1,0 +1,16 @@
+.task-list {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.light-mode .task-list {
+  border-color: var(--border-light);
+}
+
+.dark-mode .task-list {
+  border-color: var(--border-dark);
+}

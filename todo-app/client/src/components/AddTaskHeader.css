@@ -1,0 +1,9 @@
+/* Header */
+.add-task-header {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 25px 0;
+  padding: 0 0 25px 0;
+}
