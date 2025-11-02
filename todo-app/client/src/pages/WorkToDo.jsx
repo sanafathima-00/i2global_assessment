@@ -1,20 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/common/Header";
 import Card from "../components/common/Card";
 import SearchBar from "../components/SearchBar";
 import TaskList from "../components/TaskList";
 import Button from "../components/common/Button";
 import AddTask from "./AddTask";
+import { getTodos, createTodo, updateTodo, deleteTodo } from "../services/api";
 import "./WorkToDo.css";
 
 const WorkToDo = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [tasks, setTasks] = useState([
-    { id: 1, text: "Complete project proposal", completed: true, dueDate: "2025-10-25", priority: "High" },
-    { id: 2, text: "Prepare presentation slides", completed: false, dueDate: "2025-11-08", priority: "Medium" },
-    { id: 3, text: "Email progress report", completed: false, dueDate: "2025-11-02", priority: "Low" },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [isAddTaskModalOpen, setIsAddTaskModalOpen] = useState(false);
+  const [editingTask, setEditingTask] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+
+  const fetchTodos = async () => {
+    try {
+      const todos = await getTodos();
+      setTasks(todos);
+    } catch (error) {
+      console.error("Error fetching todos:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const completedCount = tasks.filter((t) => t.completed).length;
 
@@ -22,38 +36,74 @@ const WorkToDo = () => {
     setIsAddTaskModalOpen(true);
   };
 
-  const handleSaveTask = (taskData) => {
-    const newTask = {
-      id: Date.now(),
-      text: taskData.title,
-      completed: false,
-      dueDate: taskData.dueDate,
-      priority: taskData.priority,
-      category: taskData.category,
-      description: taskData.description,
-    };
-    setTasks([...tasks, newTask]);
+  const handleSaveTask = async (taskData) => {
+    try {
+      if (editingTask) {
+        // Editing existing task
+        const updatedTodo = await updateTodo(editingTask.id, {
+          title: taskData.title,
+          description: taskData.description,
+          due_date: taskData.dueDate,
+          priority: taskData.priority,
+        });
+        setTasks(tasks.map((t) => (t.id === editingTask.id ? updatedTodo : t)));
+      } else {
+        // Creating new task
+        const newTodo = {
+          title: taskData.title,
+          description: taskData.description,
+          completed: false,
+          due_date: taskData.dueDate,
+          priority: taskData.priority,
+        };
+        const createdTodo = await createTodo(newTodo);
+        setTasks([...tasks, createdTodo]);
+      }
+      setIsAddTaskModalOpen(false);
+      setEditingTask(null);
+    } catch (error) {
+      console.error("Error saving todo:", error);
+    }
   };
 
   const handleCloseModal = () => {
     setIsAddTaskModalOpen(false);
+    setEditingTask(null);
   };
 
-  const toggleComplete = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
+  const handleEditTask = (task) => {
+    setEditingTask(task);
+    setIsAddTaskModalOpen(true);
   };
 
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  const toggleComplete = async (id) => {
+    const task = tasks.find((t) => t.id === id);
+    if (!task) return;
+
+    try {
+      const updatedTodo = await updateTodo(id, { completed: !task.completed });
+      setTasks(tasks.map((t) => (t.id === id ? updatedTodo : t)));
+    } catch (error) {
+      console.error("Error updating todo:", error);
+    }
+  };
+
+  const deleteTask = async (id) => {
+    try {
+      await deleteTodo(id);
+      setTasks(tasks.filter((task) => task.id !== id));
+    } catch (error) {
+      console.error("Error deleting todo:", error);
+    }
   };
 
   const filteredTasks = tasks.filter((task) =>
-    task.text.toLowerCase().includes(searchQuery.toLowerCase())
+    task.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="work-todo-container">
@@ -71,6 +121,7 @@ const WorkToDo = () => {
           tasks={filteredTasks}
           toggleComplete={toggleComplete}
           deleteTask={deleteTask}
+          onEdit={handleEditTask}
         />
         <Button onClick={handleAddTask}>+ Add New Task</Button>
       </Card>
@@ -79,6 +130,7 @@ const WorkToDo = () => {
         isOpen={isAddTaskModalOpen}
         onClose={handleCloseModal}
         onSave={handleSaveTask}
+        editingTask={editingTask}
       />
     </div>
   );

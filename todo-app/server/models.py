@@ -1,6 +1,6 @@
 # models.py - SQLAlchemy models for the Todo app
 
-from sqlalchemy import Boolean, Column, Integer, String
+from sqlalchemy import Boolean, Column, Integer, String, Date
 from database import Base
 
 class Todo(Base):
@@ -10,3 +10,5 @@ class Todo(Base):
     title = Column(String, index=True)
     description = Column(String, nullable=True)
     completed = Column(Boolean, default=False)
+    due_date = Column(Date, nullable=True)
+    priority = Column(String, nullable=True)

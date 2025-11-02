@@ -10,7 +10,8 @@ todo-app/
 │   └── src/
 │       ├── components/  # React components
 │       ├── pages/       # Different webpages
-│       └── style/       # Custom CSS
+│       ├── services/    # API service files
+│       └── styles/      # Custom CSS
 └── server/          # Python FastAPI backend
     ├── main.py      # Entry point
     ├── database.py  # SQLite + SQLAlchemy setup
@@ -19,6 +20,14 @@ todo-app/
     ├── schemas.py   # Pydantic models
     └── __init__.py
 ```
+
+## API Endpoints
+
+- `GET /api/todos` - Retrieve all todos
+- `POST /api/todos` - Create a new todo
+- `GET /api/todos/{todo_id}` - Retrieve a specific todo by ID
+- `PUT /api/todos/{todo_id}` - Update a specific todo by ID
+- `DELETE /api/todos/{todo_id}` - Delete a specific todo by ID
 
 ## Setup Instructions
 

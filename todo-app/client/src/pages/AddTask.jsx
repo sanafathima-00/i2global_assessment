@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../components/common/Card";
 import "./AddTask.css";
 import Header from "../components/common/Header";
 import AddTaskForm from "../components/AddTaskForm";
 import Button from "../components/common/Button";
 
-const AddTask = ({ isOpen, onClose, onSave }) => {
+const AddTask = ({ isOpen, onClose, onSave, editingTask }) => {
   const [formData, setFormData] = useState({
     title: "",
     startDate: "",
@@ -14,6 +14,28 @@ const AddTask = ({ isOpen, onClose, onSave }) => {
     dueDate: "",
     description: "",
   });
+
+  useEffect(() => {
+    if (editingTask) {
+      setFormData({
+        title: editingTask.title || "",
+        startDate: editingTask.start_date || "",
+        priority: editingTask.priority || "",
+        category: editingTask.category || "",
+        dueDate: editingTask.due_date || "",
+        description: editingTask.description || "",
+      });
+    } else {
+      setFormData({
+        title: "",
+        startDate: "",
+        priority: "",
+        category: "",
+        dueDate: "",
+        description: "",
+      });
+    }
+  }, [editingTask, isOpen]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -66,7 +88,7 @@ const AddTask = ({ isOpen, onClose, onSave }) => {
   return (
     <div className="add-task-modal-overlay" onClick={handleOverlayClick}>
       <Card className="add-task-modal-content">
-        <Header title="Add New Task" level={1} align="center" style={{ marginBottom: '20px' }} />
+        <Header title={editingTask ? "Edit Task" : "Add New Task"} level={1} align="center" style={{ marginBottom: '20px' }} />
         <AddTaskForm
           formData={formData}
           handleInputChange={handleInputChange}

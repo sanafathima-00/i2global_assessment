@@ -152,3 +152,22 @@
   color: var(--delete-hover);
   transform: scale(1.1);
 }
+
+.edit-icon {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  font-size: 18px;
+}
+
+.light-mode .edit-icon {
+  color: var(--light-search-placeholder);
+}
+
+.dark-mode .edit-icon {
+  color: var(--dark-search-placeholder);
+}
+
+.edit-icon:hover {
+  color: var(--primary-blue);
+  transform: scale(1.1);
+}
