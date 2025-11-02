@@ -20,6 +20,20 @@ const AddTask = ({ isOpen, onClose, onSave }) => {
   };
 
   const handleSave = () => {
+    // Validate required fields
+    if (!formData.title.trim()) {
+      alert("Task title is required.");
+      return;
+    }
+    if (!formData.dueDate) {
+      alert("Due date is required.");
+      return;
+    }
+    if (!formData.priority) {
+      alert("Priority is required.");
+      return;
+    }
+
     // Simulate save action
     console.log("Saving task:", formData);
     onSave(formData);

@@ -9,10 +9,11 @@ const AddTaskForm = ({ formData, handleInputChange, today }) => {
         <input
           type="text"
           name="title"
-          placeholder="Task Title"
+          placeholder="Task Title *"
           value={formData.title}
           onChange={handleInputChange}
           className="add-task-input add-task-title-input"
+          required
         />
       </div>
 
