@@ -1,0 +1,95 @@
+@import "../../styles/variables.css";
+
+/* ===============================
+   🔘 Common Button Component
+   =============================== */
+
+.common-button {
+  font-family: var(--font-family);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* ---------- Variants ---------- */
+.common-button-primary {
+  background-color: var(--modal-light-primary-btn);
+  color: var(--white);
+}
+
+.common-button-primary:hover:not(:disabled) {
+  background-color: var(--modal-light-primary-hover);
+}
+
+.common-button-secondary {
+  background-color: var(--modal-light-secondary-btn);
+  color: var(--modal-light-secondary-text);
+}
+
+.common-button-secondary:hover:not(:disabled) {
+  background-color: var(--modal-light-secondary-hover);
+}
+
+/* ---------- Sizes ---------- */
+.common-button-small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.common-button-medium {
+  padding: 11px 23px;
+  font-size: 16px;
+}
+
+.common-button-large {
+  padding: 15px 35px;
+  font-size: 18px;
+}
+
+/* ---------- States ---------- */
+.common-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.common-button-loading {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* ---------- Icon ---------- */
+.common-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.common-button-with-icon {
+  /* Additional styles for buttons with icons if needed */
+}
+
+/* ---------- Dark Mode Overrides ---------- */
+.dark-mode .common-button-primary {
+  background-color: var(--modal-dark-primary-btn);
+}
+
+.dark-mode .common-button-primary:hover:not(:disabled) {
+  background-color: var(--modal-dark-primary-hover);
+}
+
+.dark-mode .common-button-secondary {
+  background-color: var(--modal-dark-secondary-btn);
+  color: var(--modal-dark-secondary-text);
+}
+
+.dark-mode .common-button-secondary:hover:not(:disabled) {
+  background-color: var(--modal-dark-secondary-hover);
+}

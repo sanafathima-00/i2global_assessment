@@ -1,0 +1,82 @@
+@import "../../styles/variables.css";
+
+/* ===============================
+   🃏 Common Card Component
+   =============================== */
+
+.common-card {
+  box-sizing: border-box;
+  border-radius: var(--border-radius-medium);
+}
+
+/* ---------- Variants ---------- */
+.common-card-variant-filled {
+  /* Default filled style */
+}
+
+.common-card-variant-outlined {
+  border: 2px solid;
+}
+
+/* ---------- Padding ---------- */
+.common-card-padding-small {
+  padding: var(--spacing-small);
+}
+
+.common-card-padding-medium {
+  padding: var(--spacing-medium);
+}
+
+.common-card-padding-large {
+  padding: var(--spacing-large);
+}
+
+.common-card-padding-xlarge {
+  padding: var(--spacing-xlarge);
+}
+
+/* ---------- Border Radius ---------- */
+.common-card-radius-small {
+  border-radius: var(--border-radius-small);
+}
+
+.common-card-radius-medium {
+  border-radius: var(--border-radius-medium);
+}
+
+.common-card-radius-large {
+  border-radius: var(--border-radius-large);
+}
+
+/* ---------- Shadow ---------- */
+.common-card-shadow {
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+/* ---------- Light Mode ---------- */
+.light-mode .common-card {
+  background-color: var(--light-background);
+  border-color: var(--light-border);
+}
+
+.light-mode .common-card-variant-outlined {
+  border-color: var(--light-border);
+}
+
+.light-mode .common-card-shadow {
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+/* ---------- Dark Mode ---------- */
+.dark-mode .common-card {
+  background-color: var(--dark-background);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .common-card-variant-outlined {
+  border-color: var(--dark-border);
+}
+
+.dark-mode .common-card-shadow {
+  box-shadow: 0 4px 12px var(--shadow-dark);
+}

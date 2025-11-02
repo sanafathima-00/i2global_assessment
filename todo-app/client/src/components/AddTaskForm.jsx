@@ -1,34 +1,35 @@
 import React from 'react';
-import AddTaskField from './AddTaskField';
+import FormField from './common/FormField';
 import './AddTaskForm.css';
 
 const AddTaskForm = ({ formData, handleInputChange, today }) => {
   return (
     <div className="add-task-form">
       <div className="add-task-section">
-        <input
+        <FormField
           type="text"
           name="title"
-          placeholder="Task Title *"
+          placeholder="Task Title"
           value={formData.title}
           onChange={handleInputChange}
-          className="add-task-input add-task-title-input"
           required
         />
       </div>
 
       <div className="add-task-section add-task-attributes-grid">
-        <AddTaskField
+        <FormField
           type="date"
           name="startDate"
+          label="Start Date"
           placeholder="dd-mm-yyyy"
           value={formData.startDate}
           onChange={handleInputChange}
           min={today}
         />
-        <AddTaskField
+        <FormField
           type="select"
           name="category"
+          label="Category"
           value={formData.category}
           onChange={handleInputChange}
           options={[
@@ -38,17 +39,21 @@ const AddTaskForm = ({ formData, handleInputChange, today }) => {
             { value: 'Study', label: 'Study' },
           ]}
         />
-        <AddTaskField
+        <FormField
           type="date"
           name="dueDate"
+          label="Due Date"
           placeholder="dd-mm-yyyy"
           value={formData.dueDate}
           onChange={handleInputChange}
           min={formData.startDate || today}
+          required
+          showRequiredIndicator={false}
         />
-        <AddTaskField
+        <FormField
           type="select"
           name="priority"
+          label="Priority"
           value={formData.priority}
           onChange={handleInputChange}
           options={[
@@ -57,16 +62,18 @@ const AddTaskForm = ({ formData, handleInputChange, today }) => {
             { value: 'Medium', label: 'Medium' },
             { value: 'Low', label: 'Low' },
           ]}
+          required
+          showRequiredIndicator={false}
         />
       </div>
 
       <div className="add-task-section">
-        <textarea
+        <FormField
+          type="textarea"
           name="description"
           placeholder="Add a description..."
           value={formData.description}
           onChange={handleInputChange}
-          className="add-task-textarea"
         />
       </div>
     </div>

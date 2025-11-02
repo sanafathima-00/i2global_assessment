@@ -80,6 +80,14 @@
 
 /* Title Input */
 
+/* Actions */
+.add-task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .add-task-modal-content {

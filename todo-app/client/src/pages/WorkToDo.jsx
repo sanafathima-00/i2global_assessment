@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import Header from "../components/common/Header";
+import Card from "../components/common/Card";
 import SearchBar from "../components/SearchBar";
 import TaskList from "../components/TaskList";
-import AddTaskButton from "../components/AddTaskButton";
+import Button from "../components/common/Button";
 import AddTask from "./AddTask";
 import "./WorkToDo.css";
 
 const WorkToDo = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [tasks, setTasks] = useState([
-    { id: 1, text: "Complete project proposal", completed: true, dueDate: "Oct 25", priority: "High" },
-    { id: 2, text: "Prepare presentation slides", completed: false, dueDate: "Oct 28", priority: "Medium" },
-    { id: 3, text: "Email progress report", completed: false, dueDate: "Nov 2", priority: "Low" },
+    { id: 1, text: "Complete project proposal", completed: true, dueDate: "2025-10-25", priority: "High" },
+    { id: 2, text: "Prepare presentation slides", completed: false, dueDate: "2025-11-08", priority: "Medium" },
+    { id: 3, text: "Email progress report", completed: false, dueDate: "2025-11-02", priority: "Low" },
   ]);
   const [isAddTaskModalOpen, setIsAddTaskModalOpen] = useState(false);
 
@@ -55,19 +57,23 @@ const WorkToDo = () => {
 
   return (
     <div className="work-todo-container">
-      <h2 className="page-title">
-        Work To-Dos <span>({completedCount}/{tasks.length} completed)</span>
-      </h2>
+      <Header
+        title={`Work To-Dos (${completedCount}/${tasks.length} completed)`}
+        level={2}
+        align="center"
+        className="page-title"
+        style={{ marginTop: '75px' }}
+      />
 
-      <div className="work-todo-card">
+      <Card className="work-todo-card">
         <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         <TaskList
           tasks={filteredTasks}
           toggleComplete={toggleComplete}
           deleteTask={deleteTask}
         />
-        <AddTaskButton onClick={handleAddTask} />
-      </div>
+        <Button onClick={handleAddTask}>+ Add New Task</Button>
+      </Card>
 
       <AddTask
         isOpen={isAddTaskModalOpen}

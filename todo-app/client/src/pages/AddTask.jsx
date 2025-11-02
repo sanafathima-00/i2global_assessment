@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import Card from "../components/common/Card";
 import "./AddTask.css";
-import AddTaskHeader from "../components/AddTaskHeader";
+import Header from "../components/common/Header";
 import AddTaskForm from "../components/AddTaskForm";
-import AddTaskActions from "../components/AddTaskActions";
+import Button from "../components/common/Button";
 
 const AddTask = ({ isOpen, onClose, onSave }) => {
   const [formData, setFormData] = useState({
@@ -64,15 +65,18 @@ const AddTask = ({ isOpen, onClose, onSave }) => {
 
   return (
     <div className="add-task-modal-overlay" onClick={handleOverlayClick}>
-      <div className="add-task-modal-content">
-        <AddTaskHeader />
+      <Card className="add-task-modal-content">
+        <Header title="Add New Task" level={1} align="center" style={{ marginBottom: '20px' }} />
         <AddTaskForm
           formData={formData}
           handleInputChange={handleInputChange}
           today={today}
         />
-        <AddTaskActions onClose={handleClose} onSave={handleSave} />
-      </div>
+        <div className="add-task-actions">
+          <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+          <Button variant="primary" onClick={handleSave}>Save Task</Button>
+        </div>
+      </Card>
     </div>
   );
 };

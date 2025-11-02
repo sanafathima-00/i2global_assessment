@@ -1,0 +1,67 @@
+@import "../../styles/variables.css";
+
+/* ===============================
+   📰 Common Header Component
+   =============================== */
+
+.common-header {
+  font-family: var(--font-family);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- Levels ---------- */
+.common-header-1 {
+  font-size: var(--font-size-header);
+}
+
+.common-header-2 {
+  font-size: 24px;
+}
+
+.common-header-3 {
+  font-size: 20px;
+}
+
+.common-header-4 {
+  font-size: 18px;
+}
+
+.common-header-5 {
+  font-size: 16px;
+}
+
+.common-header-6 {
+  font-size: 14px;
+}
+
+/* ---------- Alignment ---------- */
+.common-header-align-left {
+  text-align: left;
+}
+
+.common-header-align-center {
+  text-align: center;
+}
+
+.common-header-align-right {
+  text-align: right;
+}
+
+/* ---------- Subtitle ---------- */
+.common-header-subtitle {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+/* ---------- Light Mode ---------- */
+.light-mode .common-header {
+  color: var(--light-text);
+}
+
+/* ---------- Dark Mode ---------- */
+.dark-mode .common-header {
+  color: var(--dark-text);
+}

@@ -1,0 +1,127 @@
+@import "../../styles/variables.css";
+
+/* ===============================
+   📝 Common FormField Component
+   =============================== */
+
+.common-form-field {
+  font-family: var(--font-family);
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: all var(--transition-speed);
+  box-sizing: border-box;
+  background-color: transparent;
+  width: 100%;
+}
+
+/* ---------- Variants ---------- */
+/* ---------- Light Mode ---------- */
+.light-mode .common-form-field {
+  background-color: var(--modal-light-input-bg);
+  color: var(--modal-light-text);
+  border-color: var(--modal-light-border);
+}
+
+.light-mode .common-form-field::placeholder {
+  color: var(--modal-light-subtext);
+}
+
+.light-mode .common-form-field:focus {
+  outline: none;
+  border-color: var(--modal-light-primary-btn);
+  box-shadow: 0 0 0 2px var(--modal-light-input-focus);
+}
+
+
+
+/* ---------- Dark Mode ---------- */
+.dark-mode .common-form-field {
+  background-color: var(--modal-dark-input-bg);
+  color: var(--modal-dark-text);
+  border-color: var(--modal-dark-border);
+}
+
+.dark-mode .common-form-field::placeholder {
+  color: var(--modal-dark-subtext);
+}
+
+.dark-mode .common-form-field:focus {
+  outline: none;
+  border-color: var(--modal-dark-primary-btn);
+  box-shadow: 0 0 0 2px var(--modal-dark-input-focus);
+}
+
+/* ---------- Select Specific ---------- */
+select.common-form-field {
+  cursor: default;
+}
+
+select.common-form-field::-webkit-dropdown-indicator {
+  cursor: pointer;
+}
+
+/* ---------- Date Specific ---------- */
+.common-form-field[type="date"] {
+  cursor: text;
+}
+
+.common-form-field[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.common-form-field-placeholder {
+  color: var(--modal-light-subtext);
+}
+
+.light-mode .common-form-field-placeholder {
+  color: var(--modal-light-subtext);
+}
+
+.dark-mode .common-form-field-placeholder {
+  color: var(--modal-dark-subtext);
+}
+
+/* ---------- Textarea Specific ---------- */
+.common-form-field[type="textarea"] {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ---------- Disabled State ---------- */
+.common-form-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Form Field Wrapper ---------- */
+.common-form-field-wrapper {
+  margin-bottom: 5px;
+}
+
+/* ---------- Label ---------- */
+.common-form-field-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.light-mode .common-form-field-label {
+  color: var(--modal-light-text);
+}
+
+.dark-mode .common-form-field-label {
+  color: var(--modal-dark-text);
+}
+
+/* ---------- Required Indicator ---------- */
+.common-form-field-required {
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+
+
+

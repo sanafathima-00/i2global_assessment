@@ -1,16 +1,17 @@
 import React from "react";
+import FormField from "./common/FormField";
 import "./SearchBar.css";
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => {
   return (
     <div className="search-bar">
       <i className="fa-solid fa-magnifying-glass search-icon"></i>
-      <input
+      <FormField
         type="text"
-        className="search-input"
         placeholder="Search tasks..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        className="search-input"
       />
     </div>
   );
