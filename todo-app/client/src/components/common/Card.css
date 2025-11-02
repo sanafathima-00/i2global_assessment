@@ -10,10 +10,6 @@
 }
 
 /* ---------- Variants ---------- */
-.common-card-variant-filled {
-  /* Default filled style */
-}
-
 .common-card-variant-outlined {
   border: 2px solid;
 }
