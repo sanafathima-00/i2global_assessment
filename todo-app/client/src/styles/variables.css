@@ -10,7 +10,7 @@
   --dark-search-placeholder: #a0a0a0;
   --dark-border: #505050;
   --dark-checkbox-outline: #909090;
-  --dark-due-date-background: rgb(110, 156, 255, 0.4);
+  --dark-due-date-background: rgb(110, 156, 255, 0.3);
   --dark-due-date-text: rgb(110, 156, 255);
   --priority-high-bg: rgba(255, 0, 0, 0.4);
   --dark-priority-high-text: #ff1900;
@@ -30,8 +30,8 @@
   --light-search-placeholder: #a0a0a0;
   --light-border: #d0d0d0;
   --light-checkbox-outline: #aaaaaa;
-  --light-due-date-background: rgba(74, 136, 255, 0.08);
-  --light-due-date-text: #555555;
+  --light-due-date-background: rgb(110, 156, 255, 0.3);
+  --light-due-date-text: rgb(110, 156, 255);
   --light-badge-background: rgba(74, 136, 255, 0.08);
   --light-badge-text: #555555;
   --light-priority-high-text: #ff0000;

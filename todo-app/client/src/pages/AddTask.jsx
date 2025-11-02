@@ -57,6 +57,17 @@ const AddTask = ({ isOpen, onClose, onSave, editingTask }) => {
       return;
     }
 
+    // Validate dates
+    const today = new Date().toISOString().split("T")[0];
+    if (formData.startDate && formData.startDate < today) {
+      alert("Start date must be today or later.");
+      return;
+    }
+    if (formData.dueDate < (formData.startDate || today)) {
+      alert("Due date must be on or after the start date (or today if no start date).");
+      return;
+    }
+
     // Simulate save action
     console.log("Saving task:", formData);
     onSave(formData);

@@ -29,7 +29,7 @@ const TaskItem = ({ task, toggleComplete, deleteTask, onEdit }) => {
       {/* ---------- Right Side ---------- */}
       <div className="task-right">
         {due_date && <span className="task-pill">Due: {formatDate(due_date)} </span>}
-        {priority && <span className={`priority-tag ${priority.toLowerCase()}`}>{priority}</span>}
+        {priority && <span className={`priority-tag ${priority.toLowerCase()} ${completed ? 'completed' : ''}`}>{priority}</span>}
         {description && <span className="task-pill">{description}</span>}
 
         <i
